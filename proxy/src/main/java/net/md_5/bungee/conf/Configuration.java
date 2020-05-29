@@ -126,22 +126,6 @@ public class Configuration implements ProxyConfig
                 }
             }
         }
-
-        for ( ListenerInfo listener : listeners )
-        {
-            for ( int i = 0; i < listener.getServerPriority().size(); i++ )
-            {
-                String server = listener.getServerPriority().get( i );
-                Preconditions.checkArgument( servers.containsKey( server ), "Server %s (priority %s) is not defined", server, i );
-            }
-            for ( String server : listener.getForcedHosts().values() )
-            {
-                if ( !servers.containsKey( server ) )
-                {
-                    ProxyServer.getInstance().getLogger().log( Level.WARNING, "Forced host server {0} is not defined", server );
-                }
-            }
-        }
     }
 
     @Override

@@ -36,6 +36,11 @@ public abstract class ProxyServer
         ProxyServer.instance = instance;
     }
 
+    public static ProxyServer getInstance()
+    {
+        return instance;
+    }
+
     /**
      * Gets the name of the currently running proxy software.
      *

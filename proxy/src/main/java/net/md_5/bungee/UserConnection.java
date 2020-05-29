@@ -371,6 +371,14 @@ public final class UserConnection implements ProxiedPlayer
     }
 
     @Override
+    public void connect(Integer proxy) {
+        switch (proxy) {
+            default:
+                return;
+        }
+    }
+
+    @Override
     public void disconnect(String reason)
     {
         disconnect0( TextComponent.fromLegacyText( reason ) );

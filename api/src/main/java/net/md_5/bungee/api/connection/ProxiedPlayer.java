@@ -134,6 +134,15 @@ public interface ProxiedPlayer extends Connection, CommandSender
     void connect(ServerConnectRequest request);
 
     /**
+     * Connects / transfers this user to the specified connection, gracefully
+     * closing the current one. Depending on the implementation, this method
+     * might return before the user has been connected.
+     *
+     * @param proxy proxy to connect to
+     */
+    void connect(Integer proxy);
+
+    /**
      * Gets the server this player is connected to.
      *
      * @return the server this player is connected to

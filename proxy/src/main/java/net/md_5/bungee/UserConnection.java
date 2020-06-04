@@ -371,8 +371,10 @@ public final class UserConnection implements ProxiedPlayer
     }
 
     @Override
-    public void connect(Integer proxy) {
-        switch (proxy) {
+    public void connect(Integer proxy)
+    {
+        switch ( proxy )
+        {
             default:
                 return;
         }

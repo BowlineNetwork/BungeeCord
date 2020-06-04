@@ -439,7 +439,7 @@ public class BungeeCord extends ProxyServer
         saveThread.cancel();
         metricsThread.cancel();
 
-        getLogger().info( "Disabling plugins" );
+        getLogger().info( "Server is no longer able to be connected to." );
         for ( Plugin plugin : Lists.reverse( new ArrayList<>( pluginManager.getPlugins() ) ) )
         {
             try
@@ -457,7 +457,6 @@ public class BungeeCord extends ProxyServer
             plugin.getExecutorService().shutdownNow();
         }
 
-        getLogger().info( "Closing IO threads" );
         eventLoops.shutdownGracefully();
         try
         {
@@ -466,7 +465,6 @@ public class BungeeCord extends ProxyServer
         {
         }
 
-        getLogger().info( "Thank you and goodbye" );
         // Need to close loggers after last message!
         for ( Handler handler : getLogger().getHandlers() )
         {
